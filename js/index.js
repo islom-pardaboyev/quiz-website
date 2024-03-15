@@ -1,13 +1,22 @@
 const startBtn = document.querySelector(".start-btn");
 const popupInfo = document.querySelector(".popup-info");
 const exitBtn = document.querySelector(".exit-btn");
-console.log(exitBtn);
+const main = document.querySelector(".main");
+const continueBtn = document.querySelector(".continue-btn");
+const quizSection = document.querySelector(".quiz-section");
 
 startBtn.onclick = () => {
-    popupInfo.classList.add("active")
-}
-
+  popupInfo.classList.add("active");
+  main.classList.add("active");
+};
 
 exitBtn.onclick = () => {
-    popupInfo.classList.remove("active")
+  popupInfo.classList.remove("active");
+  main.classList.remove("active");
+};
+
+continueBtn.onclick = () => {
+    popupInfo.classList.remove("active");
+    main.classList.remove("active");
+    quizSection.classList.add("active");
 }
