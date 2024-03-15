@@ -40,15 +40,31 @@
             <span class="info">4. Lorem, ipsum dolor sit amet consectetur adipisicing.</span>
             <span class="info">5. Lorem, ipsum dolor sit amet consectetur adipisicing.</span>
 
-        <div class="btn-group">
-            <button class="info-btn exit-btn">Exit Quiz</button>
-            <a href="#" class="info-btn continue-btn">Continue</a>
-        </div>
+            <div class="btn-group">
+                <button class="info-btn exit-btn">Exit Quiz</button>
+                <a href="#" class="info-btn continue-btn">Continue</a>
+            </div>
         </div>
     </main>
 
     <!-- Custom JS -->
     <script src="./js/questions.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const startBtn = document.querySelector(".start-btn");
+            const popupInfo = document.querySelector(".popup-info");
+            const exitBtn = document.querySelector(".exit-btn");
+            console.log(exitBtn);
+
+            startBtn.onclick = () => {
+                popupInfo.classList.add("active");
+            };
+
+            exitBtn.onclick = () => {
+                popupInfo.classList.remove("active");
+            };
+        });
+    </script>
     <script src="./js/index.js"></script>
 </body>
 
