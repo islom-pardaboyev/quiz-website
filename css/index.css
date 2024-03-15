@@ -278,6 +278,18 @@ body {
   transition: 0.3s;
 }
 
+.option-list .option.correct {
+  background: #09001d;
+  color: #00a63d;
+  border-color: #00a63d;
+}
+
+.option-list .option.incorrect {
+  background: #09001d;
+  color: #a60045;
+  border-color: #a60045;
+}
+
 .option-list .option:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.1);
@@ -308,11 +320,25 @@ body {
   color: rgba(255, 255, 255, 0.3);
   font-weight: 600;
   cursor: pointer;
-  /* pointer-events: none; */
+  pointer-events: none;
   transition: 0.5s;
 }
 
-.quiz-footer .next-btn:hover {
+.quiz-footer .next-btn.active:hover {
   background: #950170;
   border-color: #950170;
+}
+
+.option-list .option.disabled {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.quiz-footer .next-btn.active{
+  pointer-events: auto;
+  background: #c40094;
+  border-color: #c40094;
+  color: #fff;
 }
