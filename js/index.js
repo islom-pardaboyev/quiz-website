@@ -1,9 +1,12 @@
+"use-strict";
+
 const startBtn = document.querySelector(".start-btn");
 const popupInfo = document.querySelector(".popup-info");
 const exitBtn = document.querySelector(".exit-btn");
 const main = document.querySelector(".main");
 const continueBtn = document.querySelector(".continue-btn");
 const quizSection = document.querySelector(".quiz-section");
+const quizBox = document.querySelector(".quiz-box");
 
 startBtn.onclick = () => {
   popupInfo.classList.add("active");
@@ -16,7 +19,32 @@ exitBtn.onclick = () => {
 };
 
 continueBtn.onclick = () => {
-    popupInfo.classList.remove("active");
-    main.classList.remove("active");
-    quizSection.classList.add("active");
+  quizSection.classList.add("active");
+  popupInfo.classList.remove("active");
+  main.classList.remove("active");
+  quizBox.classList.add("active");
+
+  showQuestion(0);
+};
+
+let questionCount = 0;
+
+const nextBtn = document.querySelector(".next-btn");
+
+nextBtn.onclick = () => {
+  questionCount++;
+  showQuestion(questionCount);
+};
+
+const optionList = document.querySelector(".option-list");
+
+function showQuestion(index) {
+  const questionText = document.querySelector(".question-text");
+  questionText.textContent = `${questions[index].numb}. ${questions[index].question}`;
+
+  let optionTag = `<div class="option"> <span>${questions[index].options[0]}</span></div>
+                  <div class="option"> <span>${questions[index].options[0]}</span></div>
+                  <div class="option"> <span>${questions[index].options[0]}</span></div>
+                  <div class="option"> <span>${questions[index].options[0]}</span></div>`;
+              
 }
